@@ -8,8 +8,6 @@ import {
   MapPin,
   Clock,
   ExternalLink,
-  Plus,
-  Minus,
   Navigation,
   Send,
   Copy,
@@ -18,7 +16,6 @@ import {
 import { Container } from "@/components/ui/Container";
 
 export function Contact() {
-  const [zoomLevel, setZoomLevel] = useState<number>(1);
   const [copiedAddress, setCopiedAddress] = useState(false);
 
   // Quick Enquiry Form State
@@ -33,10 +30,13 @@ export function Contact() {
     "Plot No. 199, Sarve No. 1-2, Sanjay Nagar, Udhna Yard, Udhna, Surat, Gujarat, India";
 
   const googleMapsDirectionsUrl =
-    "https://www.google.com/maps/dir/?api=1&destination=21.1702,72.8311&query=Vikash+Electronics+Udhna+Surat";
+    "https://www.google.com/maps/dir/?api=1&destination=21.171312,72.863690";
 
   const googleMapsViewUrl =
-    "https://www.google.com/maps/search/?api=1&query=Plot+No.+199+Sarve+No.+1-2+Sanjay+Nagar+Udhna+Yard+Udhna+Surat+Gujarat";
+    "https://www.google.com/maps/place/21%C2%B010'16.7%22N+72%C2%B051'49.3%22E/@21.171312,72.86369,17z";
+
+  const googleMapsEmbedUrl =
+    "https://maps.google.com/maps?q=21.171312,72.863690&t=&z=16&ie=UTF8&iwloc=&output=embed";
 
   const handleCopyAddress = () => {
     if (navigator?.clipboard) {
@@ -202,84 +202,40 @@ export function Contact() {
             {/* Top Google Map Info Badge */}
             <div className="p-3.5 bg-slate-950 border-b border-slate-800 z-10 space-y-1 shadow-sm">
               <div className="flex items-center justify-between">
-                <span className="font-bold text-sm text-white">Vikash Electronics</span>
+                <div>
+                  <span className="font-bold text-sm text-white">Vikash Electronics</span>
+                  <div className="text-[10px] font-mono text-amber-400 font-semibold">
+                    21°10&apos;16.7&quot;N 72°51&apos;49.3&quot;E
+                  </div>
+                </div>
                 <a
                   href={googleMapsViewUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[11px] text-sky-400 hover:text-sky-300 font-semibold flex items-center gap-1"
+                  className="text-[11px] text-sky-400 hover:text-sky-300 font-semibold flex items-center gap-1 bg-sky-950/60 px-2 py-1 rounded-lg border border-sky-500/30"
                 >
                   <span>Open in Maps</span>
                   <ExternalLink className="w-3 h-3" />
                 </a>
               </div>
               <p className="text-[10px] text-slate-400 leading-tight">
-                Plot No. 199, Sanjay Nagar, Udhna Yard, Udhna, Surat
+                Plot No. 199, Sanjay Nagar, Udhna Yard, Udhna, Surat &bull; 5VC7+GFG Surat
               </p>
             </div>
 
-            {/* Stylized Scalable Google Map Canvas */}
-            <div className="relative flex-1 bg-[#1a2234] overflow-hidden flex items-center justify-center min-h-[220px]">
-              {/* Map Road Grid Lines that scale with zoomLevel */}
-              <svg
-                className="absolute inset-0 w-full h-full opacity-50 transition-transform duration-300"
-                style={{ transform: `scale(${zoomLevel})` }}
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <line x1="0" y1="40" x2="100%" y2="40" stroke="#374151" strokeWidth="6" />
-                <line x1="0" y1="120" x2="100%" y2="120" stroke="#475569" strokeWidth="8" />
-                <line x1="0" y1="200" x2="100%" y2="200" stroke="#374151" strokeWidth="5" />
-                <line x1="80" y1="0" x2="80" y2="100%" stroke="#374151" strokeWidth="6" />
-                <line x1="220" y1="0" x2="220" y2="100%" stroke="#475569" strokeWidth="10" />
-                <line x1="340" y1="0" x2="340" y2="100%" stroke="#374151" strokeWidth="5" />
-              </svg>
-
-              {/* Area Labels */}
-              <div className="absolute top-6 left-8 text-[11px] font-bold text-slate-400">
-                Udhna
-              </div>
-              <div className="absolute bottom-12 left-10 text-[11px] font-bold text-slate-400">
-                Sanjay Nagar
-              </div>
-              <div className="absolute top-10 right-10 text-[11px] font-bold text-slate-400">
-                Udhna Yard
-              </div>
-
-              {/* Pinpoint Red Marker */}
-              <div className="relative z-10 flex flex-col items-center">
-                <div className="px-2.5 py-1 rounded bg-slate-950 border border-amber-400/60 text-white font-bold text-[10px] shadow-lg -mb-1 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-ping" />
-                  <span className="text-amber-300">Vikash Electronics</span>
-                </div>
-                <div className="text-red-500 filter drop-shadow-[0_4px_8px_rgba(239,35,60,0.6)]">
-                  <MapPin className="w-9 h-9 fill-red-600 text-white stroke-[1.5]" />
-                </div>
-              </div>
-
-              {/* Interactive Working Zoom Controls */}
-              <div className="absolute bottom-3 right-3 flex flex-col bg-slate-900/90 rounded-lg shadow-lg border border-slate-700 overflow-hidden text-white z-20">
-                <button
-                  type="button"
-                  onClick={() => setZoomLevel((prev) => Math.min(prev + 0.25, 2))}
-                  aria-label="Zoom in"
-                  className="p-2 hover:bg-slate-800 border-b border-slate-700 active:scale-95 transition-all"
-                >
-                  <Plus className="w-3.5 h-3.5" />
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setZoomLevel((prev) => Math.max(prev - 0.25, 0.75))}
-                  aria-label="Zoom out"
-                  className="p-2 hover:bg-slate-800 active:scale-95 transition-all"
-                >
-                  <Minus className="w-3.5 h-3.5" />
-                </button>
-              </div>
-
-              {/* Google Maps Text Tag */}
-              <div className="absolute bottom-2 left-3 text-[11px] font-bold tracking-tight text-slate-400 font-sans">
-                Surat Workshop
-              </div>
+            {/* Live Interactive Google Map Embed */}
+            <div className="relative flex-1 bg-slate-950 overflow-hidden min-h-[250px] w-full">
+              <iframe
+                src={googleMapsEmbedUrl}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Vikash Electronics Location"
+                className="w-full h-full min-h-[250px]"
+              />
             </div>
 
             {/* Bottom 1-Tap GPS Navigation Trigger */}

@@ -84,8 +84,8 @@ export default function RootLayout({
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "21.1702",
-      longitude: "72.8311",
+      latitude: "21.171312",
+      longitude: "72.863690",
     },
     url: "https://vikashelectronics.com",
     priceRange: "₹₹",

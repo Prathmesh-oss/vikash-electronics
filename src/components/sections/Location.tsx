@@ -11,7 +11,8 @@ import { BUSINESS_DATA } from "@/data/business";
  * When the business owner provides their exact Google Maps location pin or embed link,
  * replace this placeholder value.
  */
-export const GOOGLE_MAPS_URL = "#"; // TODO: Replace with official Google Maps URL for Vikash Electronics
+export const GOOGLE_MAPS_URL =
+  "https://www.google.com/maps/place/21%C2%B010'16.7%22N+72%C2%B051'49.3%22E/@21.171312,72.86369,17z";
 
 export function Location() {
   const addressLines = [
