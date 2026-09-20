@@ -85,11 +85,6 @@ export function ServiceCard({
 
         {/* Ambient Dark Gradient Transition */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#131b2e] via-transparent to-black/30 pointer-events-none" />
-
-        {/* Category Pill Tag Overlay on Image */}
-        <div className="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-slate-950/80 backdrop-blur-md border border-sky-400/40 text-[10px] font-mono font-bold text-sky-300 uppercase tracking-wider shadow-sm">
-          Surat Repair
-        </div>
       </div>
 
       {/* Middle: Content with Blue Icon Badge */}
