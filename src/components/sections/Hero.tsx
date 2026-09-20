@@ -5,7 +5,6 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Phone,
-  MessageCircle,
   MapPin,
   Speaker,
   Zap,
@@ -15,46 +14,71 @@ import {
   Disc3,
   Sliders,
   Wrench,
+  ArrowRight,
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 
 export function Hero() {
   const quickCategories = [
-    { label: "Speakers", icon: Speaker },
-    { label: "Amplifiers", icon: Zap },
-    { label: "DJ Lights", icon: Sparkles },
-    { label: "Sharpy Lights", icon: Lightbulb },
-    { label: "TVs", icon: Tv },
-    { label: "Home Theatre", icon: Disc3 },
-    { label: "Sound Mixers", icon: Sliders },
-    { label: "DJ Equipment", icon: Wrench },
+    { label: "Speakers", icon: Speaker, target: "services" },
+    { label: "Amplifiers", icon: Zap, target: "services" },
+    { label: "DJ Lights", icon: Sparkles, target: "services" },
+    { label: "Sharpy Lights", icon: Lightbulb, target: "services" },
+    { label: "TVs", icon: Tv, target: "services" },
+    { label: "Home Theatre", icon: Disc3, target: "services" },
+    { label: "Sound Mixers", icon: Sliders, target: "services" },
+    { label: "DJ Equipment", icon: Wrench, target: "services" },
   ];
+
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    document.body.style.overflow = "";
+
+    if (window.history.pushState) {
+      window.history.pushState(null, "", `#${id}`);
+    } else {
+      window.location.hash = id;
+    }
+
+    const element = document.getElementById(id);
+    if (element) {
+      const headerEl = document.querySelector("header");
+      const navOffset = headerEl ? headerEl.getBoundingClientRect().height : 70;
+      const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - navOffset;
+
+      window.scrollTo({
+        top: Math.max(0, offsetPosition),
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <section
       id="home"
-      className="relative min-h-[92vh] flex items-center justify-center overflow-hidden bg-bg-primary pt-28 pb-16 lg:py-24"
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-bg-primary pt-24 xs:pt-28 pb-14 lg:py-24"
     >
       {/* Background Atmosphere - Deep Blue & Electric Purple Stage Glow */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(49,46,91,0.6),rgba(17,24,39,0.98)_80%)]" />
-        <div className="absolute top-1/4 left-1/4 -translate-x-1/2 w-[550px] h-[550px] bg-sky-500/15 rounded-full blur-[140px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-[450px] h-[450px] bg-indigo-600/20 rounded-full blur-[130px]" />
+        <div className="absolute top-1/4 left-1/4 -translate-x-1/2 w-[350px] sm:w-[550px] h-[350px] sm:h-[550px] bg-sky-500/15 rounded-full blur-[100px] sm:blur-[140px]" />
+        <div className="absolute bottom-1/4 right-1/4 w-[300px] sm:w-[450px] h-[300px] sm:h-[450px] bg-indigo-600/20 rounded-full blur-[100px] sm:blur-[130px]" />
         <div className="absolute inset-0 bg-circuit-pattern opacity-40" />
       </div>
 
       <Container className="relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
-          {/* Left Column: Typography, Quick Pills & 3 CTA Buttons */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
+          {/* Left Column: Typography, Interactive Quick Pills & CTA Group */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-6 space-y-6 text-center lg:text-left"
+            className="lg:col-span-6 space-y-5 sm:space-y-6 text-center lg:text-left"
           >
             {/* Main Brand Heading */}
             <div className="space-y-1">
-              <h1 className="text-4xl xs:text-5xl sm:text-6xl xl:text-7xl font-black tracking-tight leading-[1.05]">
+              <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-black tracking-tight leading-[1.08]">
                 <span className="text-amber-400 drop-shadow-[0_0_20px_rgba(251,191,36,0.3)]">
                   VIKASH
                 </span>{" "}
@@ -65,56 +89,69 @@ export function Hero() {
 
             {/* Red Service Badge Banner */}
             <div>
-              <div className="inline-block bg-gradient-to-r from-red-600 to-rose-600 text-white font-black text-xs sm:text-sm tracking-wider uppercase px-4 py-1.5 rounded-md shadow-[0_4px_14px_rgba(225,29,72,0.4)]">
+              <div className="inline-block bg-gradient-to-r from-red-600 to-rose-600 text-white font-black text-[10px] xs:text-xs sm:text-sm tracking-wider uppercase px-3 xs:px-4 py-1.5 rounded-md shadow-[0_4px_14px_rgba(225,29,72,0.4)]">
                 DJ & ELECTRONIC REPAIRING SERVICE
               </div>
             </div>
 
             {/* Subheading */}
-            <h2 className="text-base sm:text-xl font-bold text-slate-100 max-w-xl mx-auto lg:mx-0 leading-snug">
+            <h2 className="text-sm xs:text-base sm:text-xl font-bold text-slate-100 max-w-xl mx-auto lg:mx-0 leading-snug">
               Professional Repairing Service for <br className="hidden sm:inline" />
-              DJ & Sound Equipment
+              DJ & Sound Equipment in Surat
             </h2>
 
-            {/* 8 Quick Category Pills in 2 Rows of 4 */}
+            {/* 8 Interactive Quick Category Buttons */}
             <div className="grid grid-cols-2 xs:grid-cols-4 gap-2 pt-1 max-w-xl mx-auto lg:mx-0">
               {quickCategories.map((cat) => {
                 const IconComponent = cat.icon;
                 return (
-                  <div
+                  <a
                     key={cat.label}
-                    className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg bg-bg-secondary/70 border border-amber-400/30 text-slate-200 text-xs font-semibold hover:border-amber-400 hover:text-white transition-all shadow-sm group"
+                    href={`#${cat.target}`}
+                    onClick={(e) => handleSmoothScroll(e, cat.target)}
+                    className="flex items-center gap-1.5 px-2.5 py-2 rounded-lg bg-slate-900/80 border border-amber-400/30 text-slate-200 text-xs font-semibold hover:border-amber-400 hover:text-white hover:bg-amber-400/10 active:scale-95 transition-all shadow-sm group min-h-[38px]"
                   >
                     <IconComponent className="w-3.5 h-3.5 text-amber-400 shrink-0 group-hover:scale-110 transition-transform" />
                     <span className="truncate text-[11px] sm:text-xs">{cat.label}</span>
-                  </div>
+                  </a>
                 );
               })}
             </div>
 
-            {/* Call-To-Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-3">
-              {/* Button 1: Explore Services */}
+            {/* Call-To-Action Group (Mobile optimized with Direct Call Button) */}
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3 pt-2">
+              {/* Button 1: Direct Phone Call for Mobile Users */}
               <a
-                href="#services"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-slate-950 font-black text-sm sm:text-base shadow-[0_4px_20px_rgba(251,191,36,0.35)] hover:scale-[1.02] active:scale-95 transition-all duration-200 uppercase tracking-wide"
+                href="tel:+919825485520"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-black text-sm uppercase tracking-wide shadow-[0_4px_20px_rgba(251,191,36,0.35)] active:scale-95 transition-all"
               >
-                <span>Explore Services</span>
-                <span className="text-base">&rarr;</span>
+                <Phone className="w-4 h-4 fill-slate-950" />
+                <span>Call: 98254 85520</span>
               </a>
 
-              {/* Button 2: Contact & Location */}
+              {/* Button 2: Explore Services */}
+              <a
+                href="#services"
+                onClick={(e) => handleSmoothScroll(e, "services")}
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-sky-500/50 text-white font-bold text-sm shadow-md active:scale-95 transition-all"
+              >
+                <span>Explore Services</span>
+                <ArrowRight className="w-4 h-4 text-sky-400" />
+              </a>
+
+              {/* Button 3: Workshop Location */}
               <a
                 href="#contact"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-800 border border-sky-500/50 text-white font-bold text-sm sm:text-base shadow-md hover:scale-[1.02] active:scale-95 transition-all duration-200"
+                onClick={(e) => handleSmoothScroll(e, "contact")}
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-slate-700 text-slate-300 font-semibold text-sm active:scale-95 transition-all"
               >
-                <MapPin className="w-4 h-4 text-sky-400" />
-                <span>Contact & Location</span>
+                <MapPin className="w-4 h-4 text-rose-400" />
+                <span>Workshop</span>
               </a>
             </div>
           </motion.div>
 
-          {/* Right Column: Stage Equipment Rig Visual + Cursive Callout */}
+          {/* Right Column: Stage Equipment Rig Visual */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -126,7 +163,7 @@ export function Hero() {
 
             {/* Main Stage Equipment Frame */}
             <div className="relative rounded-2xl overflow-hidden bg-bg-card border border-sky-500/30 shadow-2xl">
-              <div className="relative aspect-[16/10] sm:aspect-[16/10] w-full overflow-hidden bg-slate-950">
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-950">
                 <Image
                   src="/images/hero/dj_stage_rig.jpg"
                   alt="Vikash Electronics professional concert DJ stage lighting, speakers, moving head lights, amplifiers and audio mixing equipment"

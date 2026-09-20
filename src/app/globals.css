@@ -528,3 +528,13 @@ input:focus-visible {
     radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.04) 1px, transparent 0);
   background-size: 24px 24px;
 }
+
+/* Hide scrollbar for clean touch-scrolling chips on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
