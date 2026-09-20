@@ -209,13 +209,14 @@ export function Contact() {
                   </div>
                 </div>
                 <a
-                  href={googleMapsViewUrl}
+                  href={googleMapsDirectionsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-[11px] text-sky-400 hover:text-sky-300 font-semibold flex items-center gap-1 bg-sky-950/60 px-2 py-1 rounded-lg border border-sky-500/30"
+                  className="text-[11px] text-amber-300 hover:text-white font-bold flex items-center gap-1.5 bg-amber-400/15 hover:bg-amber-400/30 px-2.5 py-1 rounded-lg border border-amber-400/40 transition-all"
                 >
-                  <span>Open in Maps</span>
-                  <ExternalLink className="w-3 h-3" />
+                  <Navigation className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Directions</span>
+                  <ExternalLink className="w-3 h-3 text-slate-400" />
                 </a>
               </div>
               <p className="text-[10px] text-slate-400 leading-tight">
@@ -223,20 +224,41 @@ export function Contact() {
               </p>
             </div>
 
-            {/* Live Interactive Google Map Embed */}
-            <div className="relative flex-1 bg-slate-950 overflow-hidden min-h-[250px] w-full">
+            {/* Clickable Map: Clicking anywhere directly starts directions / navigation */}
+            <a
+              href={googleMapsDirectionsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative flex-1 bg-slate-950 overflow-hidden min-h-[250px] w-full block group cursor-pointer"
+              title="Click to Start Navigation on Google Maps"
+              aria-label="Click to start Google Maps navigation to Vikash Electronics"
+            >
+              {/* Live Interactive Google Map Embed */}
               <iframe
                 src={googleMapsEmbedUrl}
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
-                allowFullScreen
+                allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Vikash Electronics Location"
-                className="w-full h-full min-h-[250px]"
+                className="w-full h-full min-h-[250px] pointer-events-none group-hover:scale-105 transition-transform duration-500"
               />
-            </div>
+
+              {/* Hover / Tap Prompt Badge: Tap Map to Start Navigation */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-transparent to-black/20 flex flex-col justify-end p-3.5 pointer-events-none">
+                <div className="flex items-center justify-between gap-2 bg-slate-900/90 backdrop-blur-md px-3 py-2 rounded-xl border border-amber-400/60 shadow-2xl group-hover:bg-amber-400 group-hover:text-slate-950 transition-all duration-200">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping shrink-0" />
+                    <span className="text-[11px] font-black uppercase tracking-wider text-amber-300 group-hover:text-slate-950 transition-colors">
+                      Tap to Start Driving Directions
+                    </span>
+                  </div>
+                  <Navigation className="w-4 h-4 text-amber-400 group-hover:text-slate-950 group-hover:rotate-45 transition-all shrink-0" />
+                </div>
+              </div>
+            </a>
 
             {/* Bottom 1-Tap GPS Navigation Trigger */}
             <div className="p-3.5 bg-slate-950 border-t border-slate-800">
@@ -244,10 +266,10 @@ export function Contact() {
                 href={googleMapsDirectionsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white font-bold text-xs uppercase tracking-wider shadow-md active:scale-95 transition-all"
+                className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-xl bg-gradient-to-r from-amber-400 via-amber-500 to-yellow-400 hover:from-amber-500 hover:to-yellow-500 text-slate-950 font-black text-xs uppercase tracking-wider shadow-[0_4px_18px_rgba(250,204,21,0.4)] active:scale-95 transition-all"
               >
-                <Navigation className="w-4 h-4" />
-                <span>Start GPS Navigation</span>
+                <Navigation className="w-4 h-4 fill-slate-950" />
+                <span>Start Driving Directions (નેવિગેશન શરૂ કરો)</span>
               </a>
             </div>
           </motion.div>

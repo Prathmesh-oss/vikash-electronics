@@ -12,7 +12,7 @@ import { BUSINESS_DATA } from "@/data/business";
  * replace this placeholder value.
  */
 export const GOOGLE_MAPS_URL =
-  "https://www.google.com/maps/place/21%C2%B010'16.7%22N+72%C2%B051'49.3%22E/@21.171312,72.86369,17z";
+  "https://www.google.com/maps/dir/?api=1&destination=21.171312,72.863690&travelmode=driving";
 
 export function Location() {
   const addressLines = [
@@ -158,31 +158,37 @@ export function Location() {
               </span>
             </div>
 
-            {/* Stylized Dark Grid Map Representation */}
-            <div className="relative my-6 py-12 rounded-2xl bg-bg-primary/90 border border-brand-border/80 flex flex-col items-center justify-center text-center overflow-hidden">
+            {/* Stylized Dark Grid Map Representation (Click to Start Directions) */}
+            <a
+              href={GOOGLE_MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative my-6 py-12 rounded-2xl bg-bg-primary/90 border border-brand-border/80 flex flex-col items-center justify-center text-center overflow-hidden group cursor-pointer block hover:border-amber-400/60 transition-colors"
+              title="Click to start Google Maps directions"
+            >
               {/* Subtle Map Coordinates / Grid Lines */}
-              <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-40" />
+              <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f2937_1px,transparent_1px),linear-gradient(to_bottom,#1f2937_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-40 group-hover:opacity-60 transition-opacity" />
 
               {/* Center MapPin Marker with Glowing Pulse Rings */}
               <div className="relative z-10 flex flex-col items-center space-y-3">
                 <div className="relative flex items-center justify-center">
                   <span className="animate-ping absolute inline-flex h-16 w-16 rounded-full bg-brand-orange opacity-40" />
                   <span className="animate-pulse absolute inline-flex h-10 w-10 rounded-full bg-brand-blue opacity-50" />
-                  <div className="relative z-10 w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-orange to-amber-500 flex items-center justify-center text-white shadow-glow-orange">
+                  <div className="relative z-10 w-12 h-12 rounded-2xl bg-gradient-to-tr from-brand-orange to-amber-500 flex items-center justify-center text-white shadow-glow-orange group-hover:scale-110 transition-transform">
                     <MapPin className="w-6 h-6" />
                   </div>
                 </div>
 
                 <div className="space-y-1">
-                  <h4 className="text-base font-bold text-white tracking-wide">
-                    Vikash Electronics
+                  <h4 className="text-base font-bold text-white tracking-wide group-hover:text-amber-400 transition-colors">
+                    Vikash Electronics &bull; Start Navigation &rarr;
                   </h4>
                   <p className="text-xs font-mono text-brand-gray-muted">
-                    Sanjay Nagar, Udhna, Surat
+                    Sanjay Nagar, Udhna, Surat (21.171312, 72.863690)
                   </p>
                 </div>
               </div>
-            </div>
+            </a>
 
             {/* Bottom Assistance Notice */}
             <div className="p-4 rounded-xl bg-bg-primary/70 border border-brand-border/60 text-xs text-brand-gray-muted space-y-1 z-10">
