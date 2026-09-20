@@ -51,6 +51,16 @@ export const metadata: Metadata = {
     title: `${BUSINESS_DATA.name} | DJ & Electronic Equipment Repairing`,
     description: `Professional repair for DJ speakers, amplifiers, Sharpy lights & sound mixers in Surat. Call ${BUSINESS_DATA.formattedPhone}`,
   },
+  icons: {
+    icon: [
+      { url: "/images/logo/vikash-logo.jpg", type: "image/jpeg" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: ["/images/logo/vikash-logo.jpg"],
+    apple: [
+      { url: "/images/logo/vikash-logo.jpg", type: "image/jpeg" },
+    ],
+  },
   robots: {
     index: true,
     follow: true,
@@ -109,6 +119,9 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <head>
+        <link rel="icon" href="/images/logo/vikash-logo.jpg" type="image/jpeg" />
+        <link rel="shortcut icon" href="/images/logo/vikash-logo.jpg" type="image/jpeg" />
+        <link rel="apple-touch-icon" href="/images/logo/vikash-logo.jpg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
