@@ -19,7 +19,7 @@ export function Location() {
     "Sarve No. 1-2",
     "Sanjay Nagar",
     "Udhna Yard",
-    "Limbayat",
+    "Udhna",
     "Surat, Gujarat, India",
   ];
 
@@ -153,7 +153,7 @@ export function Location() {
                 </span>
               </div>
               <span className="text-[10px] xs:text-[11px] font-mono text-brand-blue uppercase bg-sky-950/60 border border-sky-500/30 px-2 py-0.5 xs:px-2.5 xs:py-1 rounded-full shrink-0">
-                Udhna Yard &bull; Limbayat
+                Udhna Yard &bull; Udhna
               </span>
             </div>
 
@@ -177,7 +177,7 @@ export function Location() {
                     Vikash Electronics
                   </h4>
                   <p className="text-xs font-mono text-brand-gray-muted">
-                    Sanjay Nagar, Limbayat, Surat
+                    Sanjay Nagar, Udhna, Surat
                   </p>
                 </div>
               </div>
@@ -187,7 +187,7 @@ export function Location() {
             <div className="p-4 rounded-xl bg-bg-primary/70 border border-brand-border/60 text-xs text-brand-gray-muted space-y-1 z-10">
               <p className="font-semibold text-white">Landmark Guidance:</p>
               <p className="leading-relaxed">
-                Located near Sanjay Nagar & Udhna Yard, Limbayat. Accessible by road for safely unloading speakers and heavy sound equipment.
+                Located near Sanjay Nagar & Udhna Yard, Udhna. Accessible by road for safely unloading speakers and heavy sound equipment.
               </p>
             </div>
           </motion.div>

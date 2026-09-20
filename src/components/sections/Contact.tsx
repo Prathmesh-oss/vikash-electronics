@@ -30,13 +30,13 @@ export function Contact() {
   });
 
   const fullAddress =
-    "Plot No. 199, Sarve No. 1-2, Sanjay Nagar, Udhna Yard, Limbayat, Surat, Gujarat, India";
+    "Plot No. 199, Sarve No. 1-2, Sanjay Nagar, Udhna Yard, Udhna, Surat, Gujarat, India";
 
   const googleMapsDirectionsUrl =
-    "https://www.google.com/maps/dir/?api=1&destination=21.1702,72.8311&query=Vikash+Electronics+Limbayat+Surat";
+    "https://www.google.com/maps/dir/?api=1&destination=21.1702,72.8311&query=Vikash+Electronics+Udhna+Surat";
 
   const googleMapsViewUrl =
-    "https://www.google.com/maps/search/?api=1&query=Plot+No.+199+Sarve+No.+1-2+Sanjay+Nagar+Udhna+Yard+Limbayat+Surat+Gujarat";
+    "https://www.google.com/maps/search/?api=1&query=Plot+No.+199+Sarve+No.+1-2+Sanjay+Nagar+Udhna+Yard+Udhna+Surat+Gujarat";
 
   const handleCopyAddress = () => {
     if (navigator?.clipboard) {
@@ -56,7 +56,7 @@ export function Contact() {
       formData.equipment
     )}%0A• *Problem Description:* ${encodeURIComponent(
       formData.issue || "Need inspection and repairing"
-    )}%0A%0APlease let me know the repairing charges and when I can bring it to your workshop in Limbayat, Surat.`;
+    )}%0A%0APlease let me know the repairing charges and when I can bring it to your workshop in Udhna, Surat.`;
 
     window.open(`https://wa.me/919825485520?text=${message}`, "_blank");
   };
@@ -91,7 +91,7 @@ export function Contact() {
 
           {/* Subtitle */}
           <p className="text-xs xs:text-sm sm:text-base text-slate-300 font-medium max-w-2xl mx-auto leading-relaxed">
-            Call us directly, send your repair enquiry on WhatsApp, or navigate to our workshop in Limbayat, Surat.
+            Call us directly, send your repair enquiry on WhatsApp, or navigate to our workshop in Udhna, Surat.
           </p>
         </div>
 
@@ -173,7 +173,7 @@ export function Contact() {
                 <div className="text-xs text-slate-300 leading-relaxed space-y-0.5">
                   <p className="font-semibold text-white">Plot No. 199, Sarve No. 1-2,</p>
                   <p>Sanjay Nagar, Udhna Yard,</p>
-                  <p>Limbayat, Surat, Gujarat, India.</p>
+                  <p>Udhna, Surat, Gujarat, India.</p>
                 </div>
               </div>
 
@@ -214,7 +214,7 @@ export function Contact() {
                 </a>
               </div>
               <p className="text-[10px] text-slate-400 leading-tight">
-                Plot No. 199, Sanjay Nagar, Udhna Yard, Limbayat, Surat
+                Plot No. 199, Sanjay Nagar, Udhna Yard, Udhna, Surat
               </p>
             </div>
 
@@ -236,7 +236,7 @@ export function Contact() {
 
               {/* Area Labels */}
               <div className="absolute top-6 left-8 text-[11px] font-bold text-slate-400">
-                Limbayat
+                Udhna
               </div>
               <div className="absolute bottom-12 left-10 text-[11px] font-bold text-slate-400">
                 Sanjay Nagar

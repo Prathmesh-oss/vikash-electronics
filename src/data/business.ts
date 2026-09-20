@@ -16,12 +16,12 @@ export const BUSINESS_DATA: BusinessInfo = {
     sarveNo: "Sarve No. 1-2",
     area: "Sanjay Nagar",
     landmark: "Udhna Yard",
-    zone: "Limbayat",
+    zone: "Udhna",
     city: "Surat",
     state: "Gujarat",
     country: "India",
     fullAddress:
-      "Plot No. 199, Sarve No. 1-2, Sanjay Nagar, Udhna Yard, Limbayat, Surat, Gujarat, India.",
+      "Plot No. 199, Sarve No. 1-2, Sanjay Nagar, Udhna Yard, Udhna, Surat, Gujarat, India.",
   },
 };
 

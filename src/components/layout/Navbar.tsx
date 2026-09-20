@@ -355,10 +355,10 @@ export function Navbar() {
                 <div className="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 space-y-1.5 text-xs">
                   <div className="flex items-center gap-2 text-amber-400 font-bold text-[11px]">
                     <MapPin className="w-3.5 h-3.5 shrink-0" />
-                    <span>Limbayat Workshop, Surat</span>
+                    <span>Udhna Workshop, Surat</span>
                   </div>
                   <p className="text-slate-400 text-[11px] leading-relaxed">
-                    Plot No. 199, Sarve No. 1-2, Sanjay Nagar, Udhna Yard, Limbayat.
+                    Plot No. 199, Sarve No. 1-2, Sanjay Nagar, Udhna Yard, Udhna.
                   </p>
                 </div>
               </div>

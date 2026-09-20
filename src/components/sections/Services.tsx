@@ -134,7 +134,7 @@ export function Services() {
               Have other equipment or customized repair needs?
             </h4>
             <p className="text-xs text-slate-400">
-              Speak directly with technician Murlidhar Chaudhari in Limbayat, Surat.
+              Speak directly with technician Murlidhar Chaudhari in Udhna, Surat.
             </p>
           </div>
 

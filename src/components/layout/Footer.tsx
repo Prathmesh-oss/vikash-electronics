@@ -44,7 +44,7 @@ export function Footer() {
           <div className="text-xs text-slate-400 font-medium space-y-0.5">
             <div>&copy; 2026 Vikash Electronics. All Rights Reserved.</div>
             <div className="text-[11px] text-slate-500">
-              Limbayat, Surat, Gujarat &bull; Phone: +91 98254 85520
+              Udhna, Surat, Gujarat &bull; Phone: +91 98254 85520
             </div>
           </div>
 
