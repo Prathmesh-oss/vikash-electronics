@@ -1,0 +1,1240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vikash Electronics - Academic Project Presentation (33 Slides with All SDLC Models)</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600;700&display=swap');
+    body {
+      font-family: 'Outfit', sans-serif;
+      background-color: #0c1017;
+      color: #0f172a;
+    }
+    .slide-card {
+      display: none;
+      min-height: 640px;
+    }
+    .slide-card.active {
+      display: flex;
+    }
+    .academic-sheet {
+      background: #ffffff;
+      color: #0f172a;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45);
+    }
+    .academic-red {
+      color: #dc2626;
+    }
+    .table-hdr {
+      background-color: #e6cccc;
+      color: #0f172a;
+      font-weight: 700;
+    }
+    .diagram-box {
+      background: #f0f9ff;
+      border: 1.5px solid #0e7490;
+      border-radius: 0.75rem;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between p-3 md:p-6 bg-slate-950 text-slate-100 select-none">
+
+  <!-- Header Bar -->
+  <header class="max-w-6xl w-full mx-auto flex flex-wrap items-center justify-between gap-4 py-3 px-6 rounded-2xl bg-slate-900/90 border border-slate-800 backdrop-blur-md mb-4 shadow-xl">
+    <div class="flex items-center gap-3">
+      <img src="/utu_flame_logo.png" alt="UTU" class="h-8 object-contain">
+      <div>
+        <h1 class="text-sm md:text-base font-black tracking-wide text-white uppercase">
+          AMTICS <span class="text-sky-400">Project Presentation</span>
+        </h1>
+        <p class="text-[11px] text-slate-400 font-mono">Computer Science and Engineering &bull; 33 Slides</p>
+      </div>
+    </div>
+
+    <!-- Controls & Download -->
+    <div class="flex items-center gap-3 text-xs md:text-sm font-mono">
+      <span id="slideIndicator" class="px-3 py-1 rounded-lg bg-slate-800 text-amber-400 font-bold">Slide 1 of 33</span>
+      <a href="/Vikash_Electronics_Complete_Academic_Presentation.pptx" download class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-500/20 text-red-400 hover:bg-red-500/30 border border-red-500/40 transition font-bold">
+        <i class="fa-solid fa-file-powerpoint"></i> Download 33-Slide PPTX
+      </a>
+      <button onclick="toggleFullScreen()" class="p-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300">
+        <i class="fa-solid fa-expand"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Presentation Canvas -->
+  <main class="max-w-6xl w-full mx-auto flex-1 flex flex-col justify-center">
+    <div class="academic-sheet relative w-full rounded-3xl overflow-hidden border-4 border-slate-800 p-6 md:p-10 min-h-[640px] flex flex-col justify-between">
+
+      <!-- SLIDE 1: TITLE SLIDE -->
+      <div class="slide-card active flex-col justify-between text-center py-2">
+        <div class="flex items-start justify-between w-full">
+          <img src="/utu_flame_logo.png" alt="UTU Flame Logo" class="h-14 md:h-18 object-contain">
+          <div class="flex-1 px-4">
+            <h2 class="text-xl md:text-2xl font-black text-slate-900 leading-snug">
+              Asha M. Tarsadia Institute of<br>Computer Science and Technology
+            </h2>
+            <h3 class="text-base md:text-lg font-bold text-sky-800 mt-1">
+              Computer Science and Engineering
+            </h3>
+          </div>
+          <img src="/amtics_circle_logo.png" alt="AMTICS Emblem" class="h-14 md:h-18 object-contain">
+        </div>
+
+        <div class="my-6 py-4 px-6 rounded-2xl bg-sky-50 border border-sky-200">
+          <h1 class="text-2xl md:text-3xl font-black text-sky-600">
+            Vikash Electronics – Web-Based DJ & Electronic Equipment Repair Management and Showcase Portal
+          </h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl mx-auto text-left pt-2 border-t border-slate-200">
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="text-xs font-bold text-slate-900 uppercase">Prepared by</div>
+            <div class="text-base font-black text-slate-800 mt-1">Prathmesh Chaudhari</div>
+            <div class="text-xs text-slate-600 font-mono mt-0.5">(202503103510061)</div>
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="text-xs font-bold text-slate-900 uppercase">Guided by</div>
+            <div class="text-base font-black text-slate-800 mt-1">&lt;Guide Name&gt;</div>
+            <div class="text-xs text-slate-600 font-mono mt-0.5">Department of CSE, AMTICS</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 2: OUTLINE -->
+      <div class="slide-card flex-col justify-start space-y-4">
+        <h2 class="text-3xl font-black text-slate-900 text-center">Outline</h2>
+        <div class="max-w-md mx-auto w-full pt-2 space-y-2 text-sm font-bold text-slate-800">
+          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs">1</span> Client Profile
+          </div>
+          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs">2</span> Project Introduction
+          </div>
+          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs">3</span> Objective(s)
+          </div>
+          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs">4</span> Problem Analysis (Understand, Plan, Carry out, Examine)
+          </div>
+          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs">5</span> Requirement Engineering (Client Communication & 3 FR Tables)
+          </div>
+          <div class="p-2 rounded-xl bg-sky-50 border border-sky-300 text-sky-900 flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-sky-600 text-white flex items-center justify-center text-xs">6</span> Software Development Models (Waterfall, Prototype, V-Model, Spiral, Agile Scrum)
+          </div>
+          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs">7</span> Modeling (Use Case, Class, Sequence, Activity, State, Deployment Diagrams)
+          </div>
+          <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-3">
+            <span class="w-6 h-6 rounded-full bg-slate-900 text-white flex items-center justify-center text-xs">8</span> Others & Thank You
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 3: CLIENT PROFILE -->
+      <div class="slide-card flex-col justify-start space-y-4">
+        <h2 class="text-3xl font-black text-slate-900 text-center">Client Profile</h2>
+        <div class="space-y-4 max-w-4xl mx-auto w-full pt-1 text-sm text-slate-700">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h3 class="font-bold text-slate-900 text-base">Client name and address:</h3>
+            <p class="mt-1">Vikash Electronics, a specialized DJ & electronic equipment repair workshop operating in Surat, Gujarat (Proprietor: Mr. Murlidhar Chaudhari, Plot No. 199, Sarve No. 1-2, Sanjay Nagar, Near Udhna Yard, Limbayat, Surat - 394210)</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h3 class="font-bold text-slate-900 text-base">Your communication:</h3>
+            <p class="mt-1">Requirements gathered through in-person workshop meetings and WhatsApp/calls with the owner, covering repair categories, fault diagnostics, branding, and direct contact needs</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h3 class="font-bold text-slate-900 text-base">Contract letter:</h3>
+            <p class="mt-1">Project undertaken as a client engagement with Vikash Electronics, with scope, photography, and deliverables confirmed with the client before development</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 4: PROJECT INTRODUCTION -->
+      <div class="slide-card flex-col justify-start space-y-4">
+        <h2 class="text-3xl font-black text-slate-900 text-center">Project Introduction</h2>
+        <div class="space-y-3 max-w-4xl mx-auto w-full pt-1 text-sm text-slate-700 leading-relaxed">
+          <p>Vikash Electronics is a specialized electronic repair workshop that currently depends on offline word-of-mouth and localized walk-in customers across Surat.</p>
+          <p>This project is an electronic repair showcase and management portal built exclusively for Vikash Electronics, listing its full spectrum of repair capabilities with prices, turnaround details, and authentic workshop bench imagery.</p>
+          <p>Customers can browse specialized services (Speakers, Power Amplifiers, Sharpy Moving Head Lights, Sound Mixers, and TVs) and contact the technician directly through one-click phone calls or WhatsApp without going through any third-party app.</p>
+          <p>The site also carries the workshop's verified physical address in Limbayat, Google Maps directions, and contact number in one place.</p>
+          <p>The goal is to provide a self-owned authoritative digital presence for Vikash Electronics and eliminate reliance on generic third-party business directories.</p>
+        </div>
+      </div>
+
+      <!-- SLIDE 5: OBJECTIVE(S) -->
+      <div class="slide-card flex-col justify-start space-y-4">
+        <h2 class="text-3xl font-black text-slate-900 text-center">Objective(s)</h2>
+        <div class="space-y-2.5 max-w-4xl mx-auto w-full pt-1 text-sm text-slate-700">
+          <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+            Build a single, self-owned website where customers can view the full repair service spectrum with technical highlights and genuine photos
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+            Allow customers to initiate direct phone inquiries and instant WhatsApp consultations with the technician directly through the website
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+            Reduce Vikash Electronics's dependency on third-party aggregators and directories (Justdial, Indiamart) and eliminate commission charges
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+            Display business information — location, address, contact number, and operating hours — in one place
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+            Provide the workshop technician with a simple way to present high-end repair capabilities (Sharpy beam calibration, voice coils, transistor pairs)
+          </div>
+          <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200">
+            Improve customer discovery and business inquiries across Surat and South Gujarat through structured Schema.org LocalBusiness SEO
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 6: PROCESS FLOW (FLOWCHART DIAGRAM) -->
+      <div class="slide-card flex-col justify-between py-2">
+        <h2 class="text-3xl font-black text-slate-900 text-center">Service & Repair Process Flow</h2>
+        <div class="flex items-center justify-between gap-2 overflow-x-auto py-6 max-w-5xl mx-auto w-full">
+          <div class="diagram-box p-3 text-center min-w-[120px]">
+            <div class="font-bold text-xs text-slate-900">Browse<br>Services</div>
+            <div class="text-[10px] text-slate-600 mt-1">Audio / Light / TV</div>
+          </div>
+          <i class="fa-solid fa-arrow-right text-sky-600"></i>
+          <div class="diagram-box p-3 text-center min-w-[120px]">
+            <div class="font-bold text-xs text-slate-900">Select<br>Equipment</div>
+            <div class="text-[10px] text-slate-600 mt-1">Speakers / Sharpy</div>
+          </div>
+          <i class="fa-solid fa-arrow-right text-sky-600"></i>
+          <div class="diagram-box p-3 text-center min-w-[120px]">
+            <div class="font-bold text-xs text-slate-900">Inspect<br>Diagnostics</div>
+            <div class="text-[10px] text-slate-600 mt-1">Fault Symptoms</div>
+          </div>
+          <i class="fa-solid fa-arrow-right text-sky-600"></i>
+          <div class="diagram-box p-3 text-center min-w-[120px]">
+            <div class="font-bold text-xs text-slate-900">Initiate<br>Contact</div>
+            <div class="text-[10px] text-slate-600 mt-1">Call / WhatsApp</div>
+          </div>
+          <i class="fa-solid fa-arrow-right text-sky-600"></i>
+          <div class="diagram-box p-3 text-center min-w-[120px]">
+            <div class="font-bold text-xs text-slate-900">Workshop<br>Intake</div>
+            <div class="text-[10px] text-slate-600 mt-1">Drop-off / Check</div>
+          </div>
+          <i class="fa-solid fa-arrow-right text-sky-600"></i>
+          <div class="diagram-box p-3 text-center min-w-[120px]">
+            <div class="font-bold text-xs text-slate-900">Precision<br>Repair</div>
+            <div class="text-[10px] text-slate-600 mt-1">Bench Testing</div>
+          </div>
+          <i class="fa-solid fa-arrow-right text-sky-600"></i>
+          <div class="diagram-box p-3 text-center min-w-[120px]">
+            <div class="font-bold text-xs text-slate-900">Stage Ready<br>Delivery</div>
+            <div class="text-[10px] text-slate-600 mt-1">Client Handover</div>
+          </div>
+        </div>
+        <p class="text-sm text-center text-slate-700 max-w-3xl mx-auto border-t border-slate-200 pt-3">
+          Customers move through the entire journey on Vikash Electronics's own website — no third-party app hand-off, direct technician consultation, and zero commission paid at any step.
+        </p>
+      </div>
+
+      <!-- SLIDE 7: PROBLEM ANALYSIS (Understand) -->
+      <div class="slide-card flex-col justify-start space-y-4">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Problem Analysis</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Understand the problem)</h3>
+        </div>
+        <div class="space-y-3 max-w-4xl mx-auto w-full pt-1 text-sm text-slate-700">
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-bold text-slate-900">I. Who are the stockholders in the solution to the problem?</div>
+            <p class="text-slate-600 mt-1">The workshop owner of Vikash Electronics (Mr. Murlidhar Chaudhari), customers needing urgent repairs (DJs, event organizers, sound rental providers), and the site administrator</p>
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-bold text-slate-900">II. What are the unknowns?</div>
+            <p class="text-slate-600 mt-1">The dynamic variety of hardware circuit topologies across imported and domestic brands, component availability, and how repair status will be communicated in real time</p>
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-bold text-slate-900">III. Can the problem be compartmentalized?</div>
+            <p class="text-slate-600 mt-1">Yes — into modules: service catalog display, fault diagnostic guide, direct phone/WhatsApp communication, workshop geolocation, and local SEO</p>
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-bold text-slate-900">IV. Can the problem be represented graphically?</div>
+            <p class="text-slate-600 mt-1">Yes, the flow can be represented through flowcharts, system architecture, and UML diagrams covering browsing, contact routing, and repair lifecycle</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 8: PROBLEM ANALYSIS (Plan) -->
+      <div class="slide-card flex-col justify-start space-y-4">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Problem Analysis</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Plan the solution)</h3>
+        </div>
+        <div class="space-y-3 max-w-4xl mx-auto w-full pt-1 text-sm text-slate-700">
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-bold text-slate-900">I. Have you seen similar problem before?</div>
+            <p class="text-slate-600 mt-1">Yes, in generic local service platforms, Justdial, Indiamart, and various electronic repair shop portals</p>
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-bold text-slate-900">II. Has a similar problem been solved?</div>
+            <p class="text-slate-600 mt-1">Yes — many specialized businesses now run their own direct-discovery websites to establish authoritative branding and avoid aggregator fees</p>
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-bold text-slate-900">III. Can sub-problems be defined?</div>
+            <p class="text-slate-600 mt-1">Yes: service catalog presentation, technical fault breakdown, direct contact routing (Call/WhatsApp), workshop location navigation, and search engine discoverability</p>
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-bold text-slate-900">IV. Can you represent a solution in a manner that leads to effective implementation?</div>
+            <p class="text-slate-600 mt-1">Yes, through a modular architecture diagram, component hierarchy, and UML modeling that leads to effective, phase-wise implementation</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 9: SYSTEM ARCHITECTURE DIAGRAM -->
+      <div class="slide-card flex-col justify-between py-2">
+        <h2 class="text-3xl font-black text-slate-900 text-center">System Architecture</h2>
+        <div class="max-w-3xl mx-auto w-full flex flex-col items-center gap-3 py-2">
+          <div class="diagram-box px-8 py-2 text-center">
+            <div class="font-bold text-sm text-slate-900">Customer</div>
+            <div class="text-xs text-slate-600">(Web / Mobile Browser)</div>
+          </div>
+          <i class="fa-solid fa-arrow-down text-sky-600"></i>
+          <div class="diagram-box px-8 py-2 text-center w-80">
+            <div class="font-bold text-sm text-slate-900">Website Frontend (Next.js 14)</div>
+            <div class="text-xs text-slate-600">(Hero, Service Catalog, About, Contact, Map)</div>
+          </div>
+          <i class="fa-solid fa-arrow-down text-sky-600"></i>
+          <div class="flex items-center gap-4 w-full justify-center">
+            <div class="diagram-box p-3 text-center w-48">
+              <div class="font-bold text-xs text-slate-900">Data Repository</div>
+              <div class="text-[10px] text-slate-600">(business.ts, Specs)</div>
+            </div>
+            <i class="fa-solid fa-arrow-left text-sky-600"></i>
+            <div class="diagram-box p-3 text-center w-64">
+              <div class="font-bold text-sm text-slate-900">Backend Server</div>
+              <div class="text-xs text-slate-600">(Routing, SEO, Logic)</div>
+            </div>
+            <i class="fa-solid fa-arrow-right text-sky-600"></i>
+            <div class="p-3 text-center w-48 rounded-xl border-2 border-red-500 bg-red-50 text-red-700">
+              <div class="font-bold text-xs">WhatsApp & Telephony</div>
+              <div class="text-[10px]">Direct API Bridge</div>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-down text-sky-600"></i>
+          <div class="diagram-box px-8 py-2 text-center w-80">
+            <div class="font-bold text-sm text-slate-900">Workshop Management</div>
+            <div class="text-xs text-slate-600">(Owner: Inquiry Intake & Repair Processing)</div>
+          </div>
+        </div>
+        <p class="text-xs text-center text-slate-600 border-t border-slate-200 pt-2">
+          Customer requests flow from the website through Next.js server components to the data repository and WhatsApp gateway; the owner manages inquiries directly.
+        </p>
+      </div>
+
+      <!-- SLIDE 10: PROBLEM ANALYSIS (Carry out) -->
+      <div class="slide-card flex-col justify-start space-y-4">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Problem Analysis</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Carry out the plan)</h3>
+        </div>
+        <div class="space-y-4 max-w-4xl mx-auto w-full pt-2 text-sm text-slate-700">
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-bold text-slate-900 text-base">I. Does the solution conform to the plan?</div>
+            <p class="mt-1">Yes — development proceeds module by module (Hero section, categorized service cards, about workshop, interactive Google Map, direct call/WhatsApp integration) as per the defined architecture</p>
+          </div>
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-bold text-slate-900 text-base">II. Is each component part of the solution provably correct?</div>
+            <p class="mt-1">Yes, each component is tested independently — for example, service card rendering, click-to-call link protocols, WhatsApp pre-populated query strings, and responsive mobile drawer state are each verified before integration</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 11: PROBLEM ANALYSIS (Examine) -->
+      <div class="slide-card flex-col justify-start space-y-4">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Problem Analysis</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Examine the results)</h3>
+        </div>
+        <div class="space-y-4 max-w-4xl mx-auto w-full pt-2 text-sm text-slate-700">
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-bold text-slate-900 text-base">I. Is it possible to test each component part of the solution?</div>
+            <p class="mt-1">Yes — local server page loads, interactive category filtering, one-tap mobile calling, WhatsApp URL generation, and Google Maps iframe loading are all verifiable on their own</p>
+          </div>
+          <div class="p-4 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-bold text-slate-900 text-base">II. Does the solution produce results that conform to the data, functions, and features that are required?</div>
+            <p class="mt-1">Yes — customers can view specialized repair services, inspect genuine workshop bench credentials, and initiate direct repair booking with the technician, all without a third-party app</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 12: REQUIREMENT ENGINEERING (Client communication) -->
+      <div class="slide-card flex-col justify-start space-y-4">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Requirement Engineering</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Client-side communication)</h3>
+        </div>
+        <div class="space-y-2 max-w-4xl mx-auto w-full pt-1 text-sm text-slate-700">
+          <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200">
+            Complete repair services list with categories (Audio, Lighting, Visual, General), item images, descriptions, and technical highlight tags
+          </div>
+          <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200">
+            Business details to be displayed: physical workshop address in Limbayat, Surat, direct contact helpline (+91 98254 85520), and operating hours
+          </div>
+          <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200">
+            Instant communication support (Direct Phone Call & WhatsApp chat) that avoids aggregator delays and middleman commissions
+          </div>
+          <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200">
+            A simple way for the technician (Murlidhar Chaudhari) to showcase specialized skills (voice coil rewinding, Sharpy moving head calibration)
+          </div>
+          <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200">
+            A clean, mobile-friendly design consistent with the pro-audio stage concert and DJ lighting industry brand identity
+          </div>
+          <div class="p-2.5 bg-slate-50 rounded-xl border border-slate-200">
+            Easy updates to service details and pricing in a centralized data file without needing complex developer intervention each time
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 13: FUNCTIONAL REQUIREMENTS - FR-1 -->
+      <div class="slide-card flex-col justify-start space-y-4">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Requirement Engineering</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Functional Requirements)</h3>
+        </div>
+        <div class="max-w-4xl mx-auto w-full pt-2">
+          <p class="text-sm font-bold text-slate-800 mb-2">Enlisted below are the functional requirements for the website:</p>
+          <div class="border border-slate-300 rounded-xl overflow-hidden shadow-sm text-sm">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="table-hdr border-b border-slate-300">
+                  <th class="p-3 w-40 border-r border-slate-300">FR-1</th>
+                  <th class="p-3">Service Browsing & Equipment Selection</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white text-slate-700">
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Description</td>
+                  <td class="p-3">Used to let the customer browse the specialized electronic repair services and inspect fault symptoms.</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Actor(s)</td>
+                  <td class="p-3">Customer (DJ, Event Manager, Consumer)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Input(s)</td>
+                  <td class="p-3">Category selection (Audio, Lighting, Visual), selected equipment item (e.g., Speakers, Amplifiers, Sharpy).</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Output(s)</td>
+                  <td class="p-3">Interactive service cards rendered with technical failure details, diagnostic highlights, and repair specifications.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 14: FUNCTIONAL REQUIREMENTS - FR-2 -->
+      <div class="slide-card flex-col justify-start space-y-4">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Requirement Engineering</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Functional Requirements)</h3>
+        </div>
+        <div class="max-w-4xl mx-auto w-full pt-2">
+          <div class="border border-slate-300 rounded-xl overflow-hidden shadow-sm text-sm">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="table-hdr border-b border-slate-300">
+                  <th class="p-3 w-40 border-r border-slate-300">FR-2</th>
+                  <th class="p-3">Direct Emergency Call & WhatsApp Consultation</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white text-slate-700">
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Description</td>
+                  <td class="p-3">Used to let the customer initiate instant telephonic or WhatsApp consultation directly with the technician.</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Actor(s)</td>
+                  <td class="p-3">Customer, Chief Technician (Murlidhar Chaudhari)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Input(s)</td>
+                  <td class="p-3">Customer clicks 'Call Now' (+91 98254 85520) or 'Inquire on WhatsApp' action button.</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Output(s)</td>
+                  <td class="p-3">Native phone dialer prompted with business number, or WhatsApp window launched with pre-filled inquiry text.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 15: FUNCTIONAL REQUIREMENTS - FR-3 -->
+      <div class="slide-card flex-col justify-start space-y-4">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Requirement Engineering</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Functional Requirements)</h3>
+        </div>
+        <div class="max-w-4xl mx-auto w-full pt-2">
+          <div class="border border-slate-300 rounded-xl overflow-hidden shadow-sm text-sm">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="table-hdr border-b border-slate-300">
+                  <th class="p-3 w-40 border-r border-slate-300">FR-3</th>
+                  <th class="p-3">Workshop Geolocation & Turn-by-Turn Navigation</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white text-slate-700">
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Description</td>
+                  <td class="p-3">Used to display the exact workshop location in Limbayat, Surat and provide GPS routing for equipment drop-off.</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Actor(s)</td>
+                  <td class="p-3">Customer</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Input(s)</td>
+                  <td class="p-3">Customer scrolls to Contact section or selects 'Get Directions' on Google Map.</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Output(s)</td>
+                  <td class="p-3">Embedded interactive Google Map centered on Plot 199, Sanjay Nagar, Limbayat, with GPS navigation route generated.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 16: SDLC OVERVIEW -->
+      <div class="slide-card flex-col justify-start space-y-4">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Software Development Model</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(SDLC Models Overview & Selection)</h3>
+        </div>
+        <div class="space-y-3 max-w-4xl mx-auto w-full pt-2 text-sm text-slate-700">
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-bold text-slate-900">Importance of SDLC in Web Engineering:</div>
+            <p class="text-slate-600 mt-1">Selecting the appropriate Software Development Life Cycle (SDLC) model determines project predictability, risk mitigation, customer collaboration frequency, and software delivery quality for Vikash Electronics.</p>
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-bold text-slate-900">Key SDLC Models Evaluated for this Project:</div>
+            <ul class="text-slate-600 mt-1 space-y-1">
+              <li>1. <strong>Waterfall Model:</strong> Classical Linear Sequential Model</li>
+              <li>2. <strong>Prototype Model:</strong> Iterative Mockups & Client Feedback Loops</li>
+              <li>3. <strong>V-Model:</strong> Verification and Validation Model with mapped testing phases</li>
+              <li>4. <strong>Spiral Model:</strong> Risk-Driven Evolutionary SDLC</li>
+              <li>5. <strong>Agile (Scrum) Model:</strong> Incremental Sprints & Bi-Weekly Deliveries <span class="text-emerald-700 font-bold">[SELECTED]</span></li>
+            </ul>
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <div class="font-bold text-slate-900">Evaluation Parameters for Vikash Electronics:</div>
+            <p class="text-slate-600 mt-1">Requirement volatility, workshop client availability for reviews, fast time-to-market before Gujarat festival season, and high mobile usability.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 17: WATERFALL MODEL -->
+      <div class="slide-card flex-col justify-between py-2">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Software Development Model</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Waterfall Model)</h3>
+        </div>
+        <div class="max-w-4xl mx-auto w-full py-4">
+          <!-- Stepped Waterfall Diagram -->
+          <div class="space-y-2 max-w-2xl mx-auto">
+            <div class="flex items-center gap-2">
+              <div class="diagram-box px-4 py-2 text-xs font-bold w-48 text-center">Requirements Analysis</div>
+              <i class="fa-solid fa-arrow-down text-sky-600"></i>
+            </div>
+            <div class="flex items-center gap-2 pl-12">
+              <div class="diagram-box px-4 py-2 text-xs font-bold w-48 text-center">System Design</div>
+              <i class="fa-solid fa-arrow-down text-sky-600"></i>
+            </div>
+            <div class="flex items-center gap-2 pl-24">
+              <div class="diagram-box px-4 py-2 text-xs font-bold w-48 text-center">Implementation (Coding)</div>
+              <i class="fa-solid fa-arrow-down text-sky-600"></i>
+            </div>
+            <div class="flex items-center gap-2 pl-36">
+              <div class="diagram-box px-4 py-2 text-xs font-bold w-48 text-center">Testing & QA</div>
+              <i class="fa-solid fa-arrow-down text-sky-600"></i>
+            </div>
+            <div class="flex items-center gap-2 pl-48">
+              <div class="diagram-box px-4 py-2 text-xs font-bold w-48 text-center">Deployment</div>
+              <i class="fa-solid fa-arrow-down text-sky-600"></i>
+            </div>
+            <div class="flex items-center gap-2 pl-60">
+              <div class="diagram-box px-4 py-2 text-xs font-bold w-48 text-center">Maintenance</div>
+            </div>
+          </div>
+        </div>
+        <div class="p-3 bg-red-50 border border-red-200 rounded-xl max-w-4xl mx-auto text-xs text-red-900">
+          <strong>Evaluation for Vikash Electronics:</strong> Waterfall requires 100% frozen requirements at the outset. Because equipment specifications and workshop photo assets evolved dynamically during development, a purely rigid linear model was unsuitable as the primary methodology.
+        </div>
+      </div>
+
+      <!-- SLIDE 18: PROTOTYPE MODEL -->
+      <div class="slide-card flex-col justify-between py-2">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Software Development Model</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Prototype Model)</h3>
+        </div>
+        <div class="max-w-4xl mx-auto w-full py-2">
+          <div class="flex items-center justify-between gap-3 max-w-3xl mx-auto">
+            <div class="diagram-box p-3 text-center flex-1 text-xs font-bold">1. Requirements<br>Gathering</div>
+            <i class="fa-solid fa-arrow-right text-sky-600"></i>
+            <div class="diagram-box p-3 text-center flex-1 text-xs font-bold">2. Quick<br>Design</div>
+            <i class="fa-solid fa-arrow-right text-sky-600"></i>
+            <div class="diagram-box p-3 text-center flex-1 text-xs font-bold">3. Build Prototype<br>(UI Mockup)</div>
+            <i class="fa-solid fa-arrow-right text-sky-600"></i>
+            <div class="diagram-box p-3 text-center flex-1 text-xs font-bold">4. Client Evaluation<br>(Murlidhar C.)</div>
+          </div>
+          <div class="flex justify-center items-center gap-6 mt-4">
+            <i class="fa-solid fa-arrow-down text-sky-600"></i>
+          </div>
+          <div class="flex justify-center items-center gap-6">
+            <div class="diagram-box p-3 text-center w-64 text-xs font-bold">5. Refine Prototype & Feedback</div>
+            <i class="fa-solid fa-arrow-right text-emerald-600"></i>
+            <div class="p-3 text-center w-64 text-xs font-bold rounded-xl border-2 border-emerald-600 bg-emerald-50 text-emerald-900">6. Engineer Final Production Portal</div>
+          </div>
+        </div>
+        <div class="p-3 bg-sky-50 border border-sky-200 rounded-xl max-w-4xl mx-auto text-xs text-sky-900">
+          <strong>Role in Vikash Electronics:</strong> The Prototype Model was directly adopted during Sprint 1 & 2 to design early UI mockups of the dark-themed hero section, service cards, and mobile direct-calling triggers for physical review by the workshop owner.
+        </div>
+      </div>
+
+      <!-- SLIDE 19: V-MODEL -->
+      <div class="slide-card flex-col justify-between py-2">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Software Development Model</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(V-Model: Verification & Validation)</h3>
+        </div>
+        <div class="max-w-4xl mx-auto w-full py-2">
+          <div class="grid grid-cols-2 gap-8 max-w-3xl mx-auto text-xs">
+            <!-- Left: Verification -->
+            <div class="space-y-3">
+              <div class="text-xs font-bold text-sky-800 uppercase text-center">Verification (Downward)</div>
+              <div class="diagram-box p-2 text-center font-bold">Requirements Analysis</div>
+              <div class="diagram-box p-2 text-center font-bold">System Architecture Design</div>
+              <div class="diagram-box p-2 text-center font-bold">Component UI Design</div>
+              <div class="diagram-box p-2 text-center font-bold">Module Coding (Next.js)</div>
+            </div>
+            <!-- Right: Validation -->
+            <div class="space-y-3">
+              <div class="text-xs font-bold text-emerald-800 uppercase text-center">Validation (Upward)</div>
+              <div class="diagram-box p-2 text-center font-bold">Acceptance Testing</div>
+              <div class="diagram-box p-2 text-center font-bold">System Testing</div>
+              <div class="diagram-box p-2 text-center font-bold">Integration Testing</div>
+              <div class="diagram-box p-2 text-center font-bold">Unit Testing</div>
+            </div>
+          </div>
+          <div class="text-center mt-3">
+            <span class="inline-block p-2 rounded-xl bg-slate-900 text-white text-xs font-bold px-8">Coding & Integration Vertex</span>
+          </div>
+        </div>
+        <div class="p-3 bg-red-50 border border-red-200 rounded-xl max-w-4xl mx-auto text-xs text-red-900">
+          <strong>Evaluation for Vikash Electronics:</strong> The V-Model provides exceptional test-case mapping (e.g. validating mobile tel-links and schema JSON-LD against requirements), but its rigidity makes early deployment and continuous scope refinement impractical.
+        </div>
+      </div>
+
+      <!-- SLIDE 20: SPIRAL MODEL -->
+      <div class="slide-card flex-col justify-between py-2">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Software Development Model</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Spiral Model: Risk-Driven)</h3>
+        </div>
+        <div class="grid grid-cols-2 gap-4 max-w-4xl mx-auto w-full py-2 text-xs">
+          <div class="diagram-box p-4 space-y-1">
+            <div class="font-bold text-slate-900">Quadrant 1: Objective Setting</div>
+            <p class="text-slate-600">Define business goals, alternatives, and operational constraints for the web portal.</p>
+          </div>
+          <div class="diagram-box p-4 space-y-1">
+            <div class="font-bold text-slate-900">Quadrant 2: Risk Analysis & Prototyping</div>
+            <p class="text-slate-600">Identify technical and commercial risks (e.g., SEO visibility, mobile UX adoption).</p>
+          </div>
+          <div class="diagram-box p-4 space-y-1">
+            <div class="font-bold text-slate-900">Quadrant 4: Review & Plan Next Phase</div>
+            <p class="text-slate-600">Evaluate client feedback, review milestones, and plan the next evolutionary cycle.</p>
+          </div>
+          <div class="diagram-box p-4 space-y-1">
+            <div class="font-bold text-slate-900">Quadrant 3: Engineering & Testing</div>
+            <p class="text-slate-600">Develop Next.js components, integrate APIs, and conduct verification tests.</p>
+          </div>
+        </div>
+        <div class="p-3 bg-slate-50 border border-slate-200 rounded-xl max-w-4xl mx-auto text-xs text-slate-700">
+          <strong>Evaluation for Vikash Electronics:</strong> The Spiral Model excels in massive, high-budget, high-uncertainty systems. While we leveraged its risk-analysis principles to mitigate local SEO and mobile usability risks, the overall overhead is excessive for a small-business web platform.
+        </div>
+      </div>
+
+      <!-- SLIDE 21: AGILE SCRUM (SELECTED MODEL) -->
+      <div class="slide-card flex-col justify-between py-2">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Software Development Model</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Agile Scrum Model: Selected Approach)</h3>
+        </div>
+        <div class="space-y-2 text-xs md:text-sm text-slate-700 max-w-4xl mx-auto">
+          <p class="font-bold text-emerald-800 text-base">Why Agile Scrum was Chosen for Vikash Electronics:</p>
+          <p>• <strong>Iterative Sprints:</strong> Allows delivering functional increments (e.g. Hero & Services first, then interactive Maps & SEO) without waiting for full completion.</p>
+          <p>• <strong>Continuous Stakeholder Collaboration:</strong> Bi-weekly review demos with Mr. Murlidhar Chaudhari to incorporate newly photographed workshop equipment.</p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto w-full pt-2">
+          <div class="flex items-center justify-between gap-3">
+            <div class="diagram-box px-4 py-3 font-bold text-slate-900 text-center flex-1 text-xs">Plan</div>
+            <i class="fa-solid fa-arrow-right text-sky-600"></i>
+            <div class="diagram-box px-4 py-3 font-bold text-slate-900 text-center flex-1 text-xs">Design</div>
+            <i class="fa-solid fa-arrow-right text-sky-600"></i>
+            <div class="diagram-box px-4 py-3 font-bold text-slate-900 text-center flex-1 text-xs">Develop</div>
+            <i class="fa-solid fa-arrow-right text-sky-600"></i>
+            <div class="diagram-box px-4 py-3 font-bold text-slate-900 text-center flex-1 text-xs">Test</div>
+            <i class="fa-solid fa-arrow-right text-sky-600"></i>
+            <div class="diagram-box px-4 py-3 font-bold text-slate-900 text-center flex-1 text-xs">Review</div>
+          </div>
+          <div class="w-full h-1 bg-sky-600 mt-3 relative">
+            <i class="fa-solid fa-arrow-left text-sky-600 absolute -top-2 left-0 text-sm"></i>
+          </div>
+          <p class="text-center text-xs text-slate-600 mt-1">repeats every sprint, with client review at the end of each cycle</p>
+        </div>
+      </div>
+
+      <!-- SLIDE 22: COMPARATIVE MATRIX TABLE -->
+      <div class="slide-card flex-col justify-start space-y-4">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Software Development Model</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Comparative Analysis & Selection Matrix)</h3>
+        </div>
+        <div class="max-w-5xl mx-auto w-full pt-1">
+          <div class="border border-slate-300 rounded-xl overflow-hidden shadow-sm text-xs">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="table-hdr border-b border-slate-300">
+                  <th class="p-2 border-r border-slate-300">SDLC Model</th>
+                  <th class="p-2 border-r border-slate-300">Flexibility</th>
+                  <th class="p-2 border-r border-slate-300">Client Involvement</th>
+                  <th class="p-2 border-r border-slate-300">Risk Handling</th>
+                  <th class="p-2 border-r border-slate-300">Delivery Speed</th>
+                  <th class="p-2">Suitability for Project</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white text-slate-700">
+                <tr>
+                  <td class="p-2 font-bold border-r border-slate-200 bg-slate-50">Waterfall Model</td>
+                  <td class="p-2 border-r border-slate-200">Very Low (Rigid)</td>
+                  <td class="p-2 border-r border-slate-200">Low (Start/End)</td>
+                  <td class="p-2 border-r border-slate-200">Low (Late)</td>
+                  <td class="p-2 border-r border-slate-200">Slow</td>
+                  <td class="p-2 text-red-700 font-semibold">Unsuitable (Too Rigid)</td>
+                </tr>
+                <tr>
+                  <td class="p-2 font-bold border-r border-slate-200 bg-slate-50">Prototype Model</td>
+                  <td class="p-2 border-r border-slate-200">High (Iterative)</td>
+                  <td class="p-2 border-r border-slate-200">Very High</td>
+                  <td class="p-2 border-r border-slate-200">Medium (UI)</td>
+                  <td class="p-2 border-r border-slate-200">Medium</td>
+                  <td class="p-2 text-sky-700 font-semibold">Adopted for UI Mockups</td>
+                </tr>
+                <tr>
+                  <td class="p-2 font-bold border-r border-slate-200 bg-slate-50">V-Model</td>
+                  <td class="p-2 border-r border-slate-200">Low (Sequential)</td>
+                  <td class="p-2 border-r border-slate-200">Low (Sign-offs)</td>
+                  <td class="p-2 border-r border-slate-200">Medium</td>
+                  <td class="p-2 border-r border-slate-200">Slow</td>
+                  <td class="p-2 text-red-700 font-semibold">Too Rigid for Web</td>
+                </tr>
+                <tr>
+                  <td class="p-2 font-bold border-r border-slate-200 bg-slate-50">Spiral Model</td>
+                  <td class="p-2 border-r border-slate-200">High (Evolutionary)</td>
+                  <td class="p-2 border-r border-slate-200">High</td>
+                  <td class="p-2 border-r border-slate-200">Very High</td>
+                  <td class="p-2 border-r border-slate-200">Slow to Med</td>
+                  <td class="p-2 text-slate-700">Overhead too heavy</td>
+                </tr>
+                <tr class="bg-emerald-50 text-emerald-950 font-bold">
+                  <td class="p-2 border-r border-emerald-200">Agile (Scrum) [SELECTED]</td>
+                  <td class="p-2 border-r border-emerald-200">Very High (Sprints)</td>
+                  <td class="p-2 border-r border-emerald-200">Continuous</td>
+                  <td class="p-2 border-r border-emerald-200">High (Sprint backlog)</td>
+                  <td class="p-2 border-r border-emerald-200">Fast (Bi-weekly)</td>
+                  <td class="p-2 text-emerald-800">Highly Recommended & Chosen</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-xs text-slate-700 mt-2">
+            <strong>Final Decision:</strong> Agile Scrum was chosen as the overarching SDLC model, complemented by Rapid Prototyping in Sprint 1 to design and approve the website's dark-mode visual interface with the client.
+          </p>
+        </div>
+      </div>
+
+      <!-- SLIDE 23: MODELING (Use Case Questions) -->
+      <div class="slide-card flex-col justify-start space-y-3">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Modeling</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Developing the use cases)</h3>
+        </div>
+        <div class="space-y-1.5 max-w-4xl mx-auto w-full pt-1 text-xs text-slate-700">
+          <div class="p-1.5 bg-slate-50 rounded-lg border border-slate-200"><strong>I. Who are the primary and secondary actors?</strong> Primary: DJs, Sound Rental Vendors, Event Planners. Secondary: Chief Technician.</div>
+          <div class="p-1.5 bg-slate-50 rounded-lg border border-slate-200"><strong>II. What are the actor's goal(s)?</strong> Quickly find repair services for faulty gear, verify technician credentials, and initiate contact.</div>
+          <div class="p-1.5 bg-slate-50 rounded-lg border border-slate-200"><strong>III. What preconditions should exist before the story begins?</strong> Customer has active internet connection and a browser.</div>
+          <div class="p-1.5 bg-slate-50 rounded-lg border border-slate-200"><strong>IV. What main tasks or functions are performed by the actor?</strong> Browse services, inspect fault diagnostics, call technician, chat via WhatsApp, locate shop.</div>
+          <div class="p-1.5 bg-slate-50 rounded-lg border border-slate-200"><strong>V. What exceptions might be considered?</strong> Device lacks phone dialer (system offers copy-to-clipboard or WhatsApp).</div>
+          <div class="p-1.5 bg-slate-50 rounded-lg border border-slate-200"><strong>VI. What variations in interaction are possible?</strong> Direct call vs WhatsApp Web redirect; category-filtered view vs full list.</div>
+          <div class="p-1.5 bg-slate-50 rounded-lg border border-slate-200"><strong>VII. What system information will the actor acquire?</strong> Repair specializations, diagnostic highlights, operating hours, GPS coordinates.</div>
+          <div class="p-1.5 bg-slate-50 rounded-lg border border-slate-200"><strong>VIII. External environment changes?</strong> Owner updates phone numbers or adds new equipment specializations via data layer.</div>
+          <div class="p-1.5 bg-slate-50 rounded-lg border border-slate-200"><strong>IX. Information desired by actor?</strong> Turnaround feasibility, technician competence, exact workshop address in Limbayat.</div>
+          <div class="p-1.5 bg-slate-50 rounded-lg border border-slate-200"><strong>X. Informed of unexpected changes?</strong> Holiday workshop closures or emergency on-call notices displayed in status banner.</div>
+        </div>
+      </div>
+
+      <!-- SLIDE 24: USE CASE DIAGRAM -->
+      <div class="slide-card flex-col justify-between py-2">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Modeling</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Use Case Diagram)</h3>
+        </div>
+        <div class="flex items-center justify-center gap-10 max-w-4xl mx-auto w-full py-2">
+          <!-- Actor Left -->
+          <div class="text-center">
+            <div class="text-4xl">👤</div>
+            <div class="font-bold text-sm text-slate-900 mt-1">Customer</div>
+            <div class="text-[11px] text-slate-600">(DJ / Event Organizer)</div>
+          </div>
+          <!-- System Boundary -->
+          <div class="border-2 border-slate-800 rounded-3xl p-4 w-96 space-y-2.5 text-center bg-slate-50">
+            <div class="border-2 border-red-500 rounded-full py-1.5 font-bold text-xs text-red-600 bg-white">Browse Repair Services</div>
+            <div class="border-2 border-red-500 rounded-full py-1.5 font-bold text-xs text-red-600 bg-white">View Diagnostic Details</div>
+            <div class="border-2 border-red-500 rounded-full py-1.5 font-bold text-xs text-red-600 bg-white">Call Technician Directly</div>
+            <div class="border-2 border-red-500 rounded-full py-1.5 font-bold text-xs text-red-600 bg-white">Inquire via WhatsApp</div>
+            <div class="border-2 border-red-500 rounded-full py-1.5 font-bold text-xs text-red-600 bg-white">Locate Workshop & Navigate</div>
+            <div class="text-[11px] font-mono text-slate-600 pt-1">Vikash Electronics Web Platform</div>
+          </div>
+          <!-- Actor Right -->
+          <div class="text-center">
+            <div class="text-4xl">🔧</div>
+            <div class="font-bold text-sm text-slate-900 mt-1">Owner / Technician</div>
+            <div class="text-[11px] text-slate-600">(Murlidhar Chaudhari)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 25: CLASS DIAGRAM -->
+      <div class="slide-card flex-col justify-between py-2">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Modeling</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Class Diagram)</h3>
+        </div>
+        <div class="grid grid-cols-3 gap-3 max-w-5xl mx-auto w-full text-xs">
+          <div class="border border-slate-400 rounded-lg overflow-hidden bg-white shadow-sm">
+            <div class="bg-sky-100 p-1.5 font-bold text-center border-b border-slate-300">Customer</div>
+            <div class="p-2 space-y-1 text-[11px] text-slate-600">
+              <div>- customerId: int</div>
+              <div>- name: string</div>
+              <div>- phone: string</div>
+              <div>- eventType: string</div>
+              <div class="border-t border-slate-200 pt-1 text-slate-900">
+                <div>+ browseServices()</div>
+                <div>+ callWorkshop()</div>
+                <div>+ sendWhatsApp()</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border border-slate-400 rounded-lg overflow-hidden bg-white shadow-sm">
+            <div class="bg-sky-100 p-1.5 font-bold text-center border-b border-slate-300">RepairService</div>
+            <div class="p-2 space-y-1 text-[11px] text-slate-600">
+              <div>- serviceId: string</div>
+              <div>- title: string</div>
+              <div>- category: string</div>
+              <div>- highlights: string[]</div>
+              <div class="border-t border-slate-200 pt-1 text-slate-900">
+                <div>+ getDetails()</div>
+                <div>+ filterCategory()</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="border border-slate-400 rounded-lg overflow-hidden bg-white shadow-sm">
+            <div class="bg-sky-100 p-1.5 font-bold text-center border-b border-slate-300">Technician</div>
+            <div class="p-2 space-y-1 text-[11px] text-slate-600">
+              <div>- technicianId: int</div>
+              <div>- name: string</div>
+              <div>- phone: string</div>
+              <div class="border-t border-slate-200 pt-1 text-slate-900">
+                <div>+ receiveCall()</div>
+                <div>+ executeRepair()</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 max-w-3xl mx-auto w-full text-xs">
+          <div class="border border-slate-400 rounded-lg overflow-hidden bg-white shadow-sm">
+            <div class="bg-sky-100 p-1.5 font-bold text-center border-b border-slate-300">RepairInquiry</div>
+            <div class="p-2 space-y-1 text-[11px] text-slate-600">
+              <div>- inquiryId: string | - equipmentType: string | - status: string</div>
+              <div class="border-t border-slate-200 pt-1 text-slate-900">+ createInquiry() | + updateStatus()</div>
+            </div>
+          </div>
+          <div class="border border-slate-400 rounded-lg overflow-hidden bg-white shadow-sm">
+            <div class="bg-sky-100 p-1.5 font-bold text-center border-b border-slate-300">WorkshopLocation</div>
+            <div class="p-2 space-y-1 text-[11px] text-slate-600">
+              <div>- plotNo: string | - area: string | - lat, lng: float</div>
+              <div class="border-t border-slate-200 pt-1 text-slate-900">+ getCoordinates() | + getDirections()</div>
+            </div>
+          </div>
+        </div>
+        <p class="text-[11px] text-center text-slate-600 border-t border-slate-200 pt-1">
+          Customer (1) places (*) RepairInquiry; RepairInquiry (*) references (1) RepairService managed by (1) Technician
+        </p>
+      </div>
+
+      <!-- SLIDE 26: SEQUENCE DIAGRAM -->
+      <div class="slide-card flex-col justify-between py-2">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Modeling</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Sequence Diagram)</h3>
+          <p class="text-xs text-slate-600 mt-0.5">Use case: Equipment Service Browsing & Direct WhatsApp Consultation</p>
+        </div>
+        <div class="max-w-4xl mx-auto w-full border border-slate-200 rounded-xl p-4 bg-slate-50 text-xs space-y-2.5">
+          <div class="flex justify-between font-bold text-slate-900 border-b border-slate-300 pb-2 text-center">
+            <span class="w-1/5">Customer</span>
+            <span class="w-1/5">Frontend</span>
+            <span class="w-1/5">Next.js Server</span>
+            <span class="w-1/5">Data Store</span>
+            <span class="w-1/5">WhatsApp API</span>
+          </div>
+          <div class="space-y-2 font-mono text-[11px] text-slate-700">
+            <div class="flex justify-between items-center bg-white p-1 rounded">
+              <span>Customer ➔ Frontend</span>
+              <span>1. Browse Repair Catalog</span>
+            </div>
+            <div class="flex justify-between items-center bg-white p-1 rounded">
+              <span>Frontend ➔ Server</span>
+              <span>2. Get Repair Categories</span>
+            </div>
+            <div class="flex justify-between items-center bg-white p-1 rounded">
+              <span>Server ➔ Data Store</span>
+              <span>3. Query Service Specs (business.ts)</span>
+            </div>
+            <div class="flex justify-between items-center bg-white p-1 rounded">
+              <span>Data Store ➔ Server</span>
+              <span>4. Return Technical Data & Highlights</span>
+            </div>
+            <div class="flex justify-between items-center bg-white p-1 rounded">
+              <span>Server ➔ Frontend</span>
+              <span>5. Render Service Cards & Workshop Photos</span>
+            </div>
+            <div class="flex justify-between items-center bg-white p-1 rounded">
+              <span>Customer ➔ Frontend</span>
+              <span>6. Click 'Inquire on WhatsApp'</span>
+            </div>
+            <div class="flex justify-between items-center bg-white p-1 rounded">
+              <span>Frontend ➔ WhatsApp API</span>
+              <span>7. Launch Pre-filled Service Inquiry</span>
+            </div>
+            <div class="flex justify-between items-center bg-emerald-50 text-emerald-800 p-1 rounded font-bold">
+              <span>Technician ➔ Customer</span>
+              <span>8. Instant Direct Consultation Established</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 27: ACTIVITY DIAGRAM -->
+      <div class="slide-card flex-col justify-between py-2">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Modeling</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Activity Diagram)</h3>
+        </div>
+        <div class="flex flex-col items-center gap-2 max-w-2xl mx-auto w-full text-xs py-1">
+          <div class="w-4 h-4 rounded-full bg-slate-900"></div>
+          <i class="fa-solid fa-arrow-down text-sky-600 text-xs"></i>
+          <div class="diagram-box px-6 py-1.5 font-bold">Browse Repair Services Catalog</div>
+          <i class="fa-solid fa-arrow-down text-sky-600 text-xs"></i>
+          <div class="diagram-box px-6 py-1.5 font-bold">Inspect Technical Fault Details</div>
+          <i class="fa-solid fa-arrow-down text-sky-600 text-xs"></i>
+          <!-- Decision -->
+          <div class="border-2 border-red-500 rotate-45 w-16 h-16 flex items-center justify-center my-1 bg-white">
+            <span class="-rotate-45 text-[10px] font-bold text-red-600">Channel?</span>
+          </div>
+          <div class="flex justify-between w-full max-w-md">
+            <div class="diagram-box p-2 text-center w-44">
+              <div class="font-bold text-sky-800">Phone Call</div>
+              <div class="text-[10px]">Launch Native Dialer</div>
+            </div>
+            <div class="diagram-box p-2 text-center w-44">
+              <div class="font-bold text-emerald-800">WhatsApp</div>
+              <div class="text-[10px]">Open Pre-filled Chat</div>
+            </div>
+          </div>
+          <i class="fa-solid fa-arrow-down text-sky-600 text-xs"></i>
+          <div class="diagram-box px-6 py-1.5 font-bold">Consult with Technician (Murlidhar C.)</div>
+          <i class="fa-solid fa-arrow-down text-sky-600 text-xs"></i>
+          <div class="diagram-box px-6 py-1.5 font-bold">Drop-off Gear at Limbayat Workshop</div>
+          <i class="fa-solid fa-arrow-down text-sky-600 text-xs"></i>
+          <div class="w-6 h-6 rounded-full border-2 border-slate-900 flex items-center justify-center">
+            <div class="w-3 h-3 rounded-full bg-slate-900"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 28: STATE DIAGRAM -->
+      <div class="slide-card flex-col justify-between py-2">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Modeling</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(State Diagram)</h3>
+          <p class="text-xs text-slate-600 mt-0.5">Repair Job Lifecycle</p>
+        </div>
+        <div class="max-w-4xl mx-auto w-full py-4 space-y-6">
+          <div class="flex items-center justify-between gap-2">
+            <div class="w-4 h-4 rounded-full bg-slate-900 shrink-0"></div>
+            <i class="fa-solid fa-arrow-right text-sky-600 text-xs"></i>
+            <div class="diagram-box p-2 text-center text-xs font-bold w-28">Inquiry<br>Initiated</div>
+            <i class="fa-solid fa-arrow-right text-sky-600 text-xs"></i>
+            <div class="diagram-box p-2 text-center text-xs font-bold w-28">Inspected &<br>Estimated</div>
+            <i class="fa-solid fa-arrow-right text-sky-600 text-xs"></i>
+            <div class="diagram-box p-2 text-center text-xs font-bold w-28">Repair In<br>Progress</div>
+            <i class="fa-solid fa-arrow-right text-sky-600 text-xs"></i>
+            <div class="diagram-box p-2 text-center text-xs font-bold w-28">Stress Load<br>Testing</div>
+            <i class="fa-solid fa-arrow-right text-sky-600 text-xs"></i>
+            <div class="diagram-box p-2 text-center text-xs font-bold w-28">Stage Ready<br>Delivered</div>
+            <i class="fa-solid fa-arrow-right text-sky-600 text-xs"></i>
+            <div class="w-6 h-6 rounded-full border-2 border-slate-900 flex items-center justify-center shrink-0">
+              <div class="w-3 h-3 rounded-full bg-slate-900"></div>
+            </div>
+          </div>
+          <!-- Cancelled State -->
+          <div class="flex justify-center">
+            <div class="border-2 border-red-500 rounded-xl p-3 text-center bg-red-50 text-red-700 w-56 text-xs font-bold">
+              Inquiry Cancelled /<br>Equipment Not Repairable
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 29: DEPLOYMENT DIAGRAM -->
+      <div class="slide-card flex-col justify-between py-2">
+        <h2 class="text-3xl font-black text-slate-900 text-center">Deployment Diagram</h2>
+        <div class="grid grid-cols-3 gap-6 max-w-5xl mx-auto w-full py-4 text-xs">
+          <div class="diagram-box p-4 text-center space-y-2">
+            <div class="font-bold text-sm text-slate-900">Customer Device<br>&lt;&lt;device&gt;&gt;</div>
+            <div class="text-slate-600">Web / Mobile Browser<br>(Chrome, Safari, Edge)<br>HTTP/2 & Service Worker</div>
+          </div>
+          <div class="diagram-box p-4 text-center space-y-2">
+            <div class="font-bold text-sm text-slate-900">Web Server<br>&lt;&lt;server&gt;&gt;</div>
+            <div class="text-slate-600">Next.js 14 Node.js Runtime<br>Server-Side Rendering (SSR)<br>Frontend UI + API Handlers</div>
+          </div>
+          <div class="diagram-box p-4 text-center space-y-2">
+            <div class="font-bold text-sm text-slate-900">External Services<br>&lt;&lt;external system&gt;&gt;</div>
+            <div class="text-slate-600">WhatsApp Business API<br>Native Telephony Protocol<br>Google Maps Routing API</div>
+          </div>
+        </div>
+        <div class="max-w-md mx-auto w-full text-center">
+          <div class="diagram-box p-3 text-xs">
+            <div class="font-bold text-slate-900">Static Data & Asset Store &lt;&lt;storage&gt;&gt;</div>
+            <div class="text-slate-600 text-[11px]">business.ts, SEO Metadata, Workshop & Service Images</div>
+          </div>
+        </div>
+        <p class="text-xs text-center text-slate-600 border-t border-slate-200 pt-2">
+          The customer's browser communicates with the Next.js web server over HTTPS; the server queries the structured data store and redirects to WhatsApp/Google Maps API.
+        </p>
+      </div>
+
+      <!-- SLIDE 30: USE CASE TABLE 1 -->
+      <div class="slide-card flex-col justify-start space-y-4">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Modeling</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Use cases)</h3>
+        </div>
+        <div class="max-w-4xl mx-auto w-full pt-2">
+          <div class="border border-slate-300 rounded-xl overflow-hidden shadow-sm text-sm">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="table-hdr border-b border-slate-300">
+                  <th class="p-3 w-44 border-r border-slate-300">Inquire for Repair</th>
+                  <th class="p-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white text-slate-700">
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Primary Actor(s)</td>
+                  <td class="p-3">Customer (DJ, Event Organizer, Consumer)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Goal of the use case</td>
+                  <td class="p-3">To browse specialized repair services and successfully initiate a direct repair consultation with the chief technician</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Precondition(s)</td>
+                  <td class="p-3">Customer has an active internet connection, and the Vikash Electronics website is loaded on mobile or desktop</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Trigger</td>
+                  <td class="p-3">Customer selects a specific equipment service (e.g. Speakers, Amplifiers, Sharpy Lights) and taps 'Call Now' or 'Inquire on WhatsApp'</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 31: USE CASE TABLE 2 -->
+      <div class="slide-card flex-col justify-start space-y-4">
+        <div class="text-center">
+          <h2 class="text-3xl font-black text-slate-900">Modeling</h2>
+          <h3 class="text-xl font-bold academic-red mt-1">(Use cases)</h3>
+        </div>
+        <div class="max-w-4xl mx-auto w-full pt-2">
+          <div class="border border-slate-300 rounded-xl overflow-hidden shadow-sm text-sm">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr class="table-hdr border-b border-slate-300">
+                  <th class="p-3 w-44 border-r border-slate-300">Locate Workshop & Navigate</th>
+                  <th class="p-3"></th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200 bg-white text-slate-700">
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Primary Actor(s)</td>
+                  <td class="p-3">Customer (Equipment Owner)</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Goal of the use case</td>
+                  <td class="p-3">To locate the physical workshop address in Limbayat, Surat and obtain GPS turn-by-turn navigation for equipment drop-off</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Precondition(s)</td>
+                  <td class="p-3">Customer has identified faulty electronic gear requiring physical diagnosis and reached the Contact section</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-bold border-r border-slate-200 bg-slate-50">Trigger</td>
+                  <td class="p-3">Customer clicks 'Get Directions' or interacts with the embedded Google Maps module</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 32: OTHERS -->
+      <div class="slide-card flex-col justify-start space-y-4">
+        <h2 class="text-3xl font-black text-slate-900 text-center">Others</h2>
+        <div class="space-y-3 max-w-4xl mx-auto w-full pt-2 text-sm text-slate-700">
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <strong>Technology stack implemented:</strong> Next.js 14 (React 18), TypeScript for strict type contracts, Tailwind CSS for dark-mode utility styling, Framer Motion for UI micro-animations, and Lucide Icons
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <strong>SEO & Search Discovery:</strong> Schema.org LocalBusiness JSON-LD markup, OpenGraph social cards, geo-targeted meta tags for Surat pro-audio repair rankings
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <strong>Additional planned features:</strong> Online repair ticket tracking system where customers can check job status by mobile number, an admin view for the technician to log incoming equipment repairs, and direct links to YouTube repair tutorials
+          </div>
+          <div class="p-3 bg-slate-50 rounded-xl border border-slate-200">
+            <strong>Screenshots of development:</strong> Live responsive portal running in development mode on localhost:3000 featuring authentic workshop bench testing photos and full service catalog
+          </div>
+        </div>
+      </div>
+
+      <!-- SLIDE 33: THANK YOU SLIDE -->
+      <div class="slide-card flex-col justify-between text-center py-6">
+        <div class="flex items-start justify-between w-full">
+          <img src="/utu_flame_logo.png" alt="UTU Flame Logo" class="h-14 md:h-18 object-contain">
+          <div class="flex-1 px-4">
+            <h3 class="text-lg font-bold text-slate-700">Uka Tarsadia University</h3>
+            <h4 class="text-sm font-semibold text-slate-500">Asha M. Tarsadia Institute of Computer Science and Technology</h4>
+          </div>
+          <img src="/amtics_circle_logo.png" alt="AMTICS Emblem" class="h-14 md:h-18 object-contain">
+        </div>
+
+        <div class="my-auto">
+          <h1 class="text-5xl md:text-6xl font-black text-slate-900 tracking-tight">
+            Thank You
+          </h1>
+          <div class="w-32 h-1 bg-red-600 mx-auto mt-4 rounded-full"></div>
+          
+          <div class="mt-8 space-y-2">
+            <p class="text-xl font-bold text-slate-800">Prathmesh Chaudhari (202503103510061)</p>
+            <p class="text-base text-slate-600">Vikash Electronics – Web-Based DJ & Electronic Equipment Repair Portal</p>
+          </div>
+        </div>
+
+        <div class="text-xs text-slate-400 font-mono border-t border-slate-200 pt-3">
+          Department of Computer Science and Engineering &bull; AMTICS
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Bottom Navigation Controls -->
+  <footer class="max-w-6xl w-full mx-auto flex items-center justify-between py-4 px-6 mt-2">
+    <button onclick="prevSlide()" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs md:text-sm font-semibold transition shadow">
+      <i class="fa-solid fa-arrow-left"></i> Previous
+    </button>
+
+    <div class="flex items-center gap-1 flex-wrap justify-center max-w-xl" id="slideDots"></div>
+
+    <button onclick="nextSlide()" class="flex items-center gap-2 px-5 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs md:text-sm font-black transition shadow">
+      Next <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide-card');
+    const totalSlides = slides.length;
+    const indicator = document.getElementById('slideIndicator');
+    const dotsContainer = document.getElementById('slideDots');
+
+    for (let i = 0; i < totalSlides; i++) {
+      const dot = document.createElement('button');
+      dot.className = `w-2 h-2 rounded-full transition-all ${i === 0 ? 'bg-sky-400 w-5' : 'bg-slate-700'}`;
+      dot.onclick = () => goToSlide(i);
+      dotsContainer.appendChild(dot);
+    }
+
+    function updateSlides() {
+      slides.forEach((s, idx) => {
+        s.classList.toggle('active', idx === currentSlide);
+      });
+      indicator.textContent = `Slide ${currentSlide + 1} of ${totalSlides}`;
+      
+      const dots = dotsContainer.children;
+      for (let i = 0; i < dots.length; i++) {
+        dots[i].className = `w-2 h-2 rounded-full transition-all ${i === currentSlide ? 'bg-sky-400 w-5' : 'bg-slate-700'}`;
+      }
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlides();
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSlides();
+    }
+
+    function goToSlide(idx) {
+      currentSlide = idx;
+      updateSlides();
+    }
+
+    function toggleFullScreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'Space') nextSlide();
+      if (e.key === 'ArrowLeft') prevSlide();
+    });
+  </script>
+</body>
+</html>
