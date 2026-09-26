@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project – 1 Application Form</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm 20mm 20mm 20mm;
+        }
+        * {
+            box-sizing: border-box;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+        body {
+            font-family: "Times New Roman", Times, serif;
+            color: #000;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 22mm 24mm;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.15);
+        }
+        @media print {
+            body {
+                background: none;
+                padding: 0;
+            }
+            .page {
+                width: 100%;
+                min-height: auto;
+                padding: 0;
+                box-shadow: none;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+        .title {
+            text-align: center;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: underline;
+            margin-bottom: 28px;
+            letter-spacing: 0.5px;
+        }
+        .form-box {
+            border: 1.5px solid #000;
+            margin-bottom: 22px;
+            padding: 8px 12px;
+            font-size: 15px;
+        }
+        .box-label {
+            font-weight: bold;
+            font-size: 15.5px;
+            margin-bottom: 4px;
+        }
+        .box-value {
+            font-size: 15px;
+            color: #000;
+            line-height: 1.45;
+        }
+        .desc-box {
+            min-height: 210px;
+        }
+        .signature-box {
+            min-height: 60px;
+        }
+        .verified-box {
+            min-height: 100px;
+        }
+        .two-line-box {
+            padding: 8px 12px;
+        }
+        .two-line-box .row-item {
+            margin-bottom: 12px;
+        }
+        .two-line-box .row-item:last-child {
+            margin-bottom: 0;
+        }
+        .print-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: #1e40af;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+        .print-btn:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="print-btn no-print" onclick="window.print()">🖨️ Print / Save as PDF</button>
+
+    <div class="page">
+        <div class="title">Project – 1 Application Form</div>
+
+        <!-- Student Division/Enrollment No -->
+        <div class="form-box">
+            <span class="box-label">Student Division/Enrollment No:</span>
+            <span class="box-value">&nbsp;&nbsp;202503103510061</span>
+        </div>
+
+        <!-- Student Full Name -->
+        <div class="form-box">
+            <span class="box-label">Student Full Name:</span>
+            <span class="box-value">&nbsp;&nbsp;Prathmesh Chaudhari</span>
+        </div>
+
+        <!-- Is live project? & Name of the client -->
+        <div class="form-box two-line-box">
+            <div class="row-item">
+                <span class="box-label">Is live project?</span>
+                <span class="box-value">&nbsp;&nbsp;Yes (Industry Defined Project - IDP)</span>
+            </div>
+            <div class="row-item">
+                <span class="box-label">Name of the client:</span>
+                <span class="box-value">&nbsp;&nbsp;Vikash Electronics (Proprietor: Mr. Murlidhar Chaudhari)</span>
+            </div>
+        </div>
+
+        <!-- Proposed Project Title -->
+        <div class="form-box">
+            <span class="box-label">Proposed Project Title:</span>
+            <span class="box-value">&nbsp;&nbsp;Vikash Electronics – Web-Based DJ & Electronic Equipment Repair Management and Showcase Portal</span>
+        </div>
+
+        <!-- Project Description (50-70 Words) -->
+        <div class="form-box desc-box">
+            <div class="box-label">Project Description (50-70 Words):</div>
+            <div class="box-value" style="text-align: justify; margin-top: 8px; line-height: 1.6;">
+                A specialized web application developed for Vikash Electronics, a pro-audio, DJ sound system, and stage lighting repair workshop in Surat. The portal enables digital equipment service booking, showcases repair capabilities across audio, lighting, and visual gear, offers direct WhatsApp fault consultation, and integrates geolocation routing. It eliminates third-party listing aggregator commissions and establishes direct digital presence for the workshop.
+            </div>
+        </div>
+
+        <!-- Student Signature -->
+        <div class="form-box signature-box">
+            <div class="box-label">Student Signature:</div>
+            <div class="box-value"></div>
+        </div>
+
+        <!-- Verified by -->
+        <div class="form-box verified-box">
+            <div class="box-label">Verified by:</div>
+            <div class="box-value"></div>
+        </div>
+    </div>
+
+</body>
+</html>
