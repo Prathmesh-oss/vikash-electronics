@@ -117,23 +117,18 @@ export function Location() {
               </div>
             </div>
 
-            {/* Get Directions Button (uses placeholder GOOGLE_MAPS_URL) */}
+            {/* Get Directions Button */}
             <div className="pt-5 sm:pt-6 mt-5 sm:mt-6 border-t border-brand-border/60">
               <a
                 href={GOOGLE_MAPS_URL}
-                target={GOOGLE_MAPS_URL !== "#" ? "_blank" : undefined}
-                rel={GOOGLE_MAPS_URL !== "#" ? "noopener noreferrer" : undefined}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-3 px-5 sm:px-6 py-3.5 sm:py-4 rounded-xl bg-gradient-to-r from-brand-blue to-sky-600 text-white font-bold text-sm sm:text-base shadow-glow-blue hover:shadow-glow-blue-lg hover:from-sky-500 hover:to-brand-blue transition-all duration-300 min-h-[48px] group"
               >
                 <Navigation className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-45 transition-transform duration-300 shrink-0" />
                 <span>GET DIRECTIONS</span>
                 <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-70 shrink-0" />
               </a>
-              {GOOGLE_MAPS_URL === "#" && (
-                <p className="text-[10px] sm:text-[11px] text-center text-brand-gray-dark mt-2 font-mono">
-                  (Google Maps link ready to be configured)
-                </p>
-              )}
             </div>
           </motion.div>
 
